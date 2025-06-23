@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <header>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </header>
+
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text }}</p>
+        </article>
+    </body>
+</html>

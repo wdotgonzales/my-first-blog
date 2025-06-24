@@ -4,12 +4,12 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <header>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </header>
-
+        {% include 'blog/header.html' %}
+        <div style="margin-bottom:30px">
+            <a href="{% url 'post_new' %}">Add New Post +</a>
+        </div>
         {% for post in posts %}
-            <article>
+            <article style="border:1px solid black; margin-top:10px;">
                 <time>published: {{ post.published_date }}</time>
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                 <p>{{ post.text }}</p>

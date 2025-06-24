@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add your CSS links here -->
+</head>
+<body>
+    {% include 'blog/header.html' %}
+    <h2>Add New post</h2>
+
+    {% block content %}
+        <h2>New post</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secondary">Save</button>
+        </form>
+    {% endblock %}
+    
+</body>
+</html>
